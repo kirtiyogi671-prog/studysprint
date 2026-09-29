@@ -99,7 +99,7 @@ The repository includes "seed_demo.py", which creates sample data in a separate 
 
 macOS/Linux:
 
-STUDYSPRINT_DB=demo.db python seed_demo.py
+STUDYSPRINT_DB=demo.db python scripts/seed_demo.py
 STUDYSPRINT_DB=demo.db python main.py report
 
 Windows PowerShell:
