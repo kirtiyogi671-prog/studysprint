@@ -31,7 +31,7 @@ The application itself uses only Python's standard library. `pytest` is optional
 
 ```bash
 git clone
-https://github.com/ kirtiyogi671-prog/studysprint.git
+https://github.com/kirtiyogi671-prog/studysprint.git
 ```
 
 ### Step 2: Create a virtual environment (recommended)
@@ -155,7 +155,7 @@ Run `python main.py -h` for the complete command-line help.
 Run the complete test suite from the repository root:
 
 ```bash
-python -m unittest discover  -v
+python -m unittest discover-v
 ```
 
 The project includes an automated test suite covering the main modules.
