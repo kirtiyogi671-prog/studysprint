@@ -1,0 +1,9 @@
+digraph G { rankdir=TB; node [shape=box, style="rounded,filled", fillcolor="#eef3ff", fontname="Helvetica", fontsize=11]; edge [fontname="Helvetica", fontsize=9];
+ subgraph cluster_p { label="Presentation Layer"; style=dashed; cli [label="cli.py\n(argparse CLI)"]; main [label="main.py\n(entry point)"]; }
+ subgraph cluster_b { label="Business Logic Layer"; style=dashed;
+  sm [label="Module 1\nsubject_manager.py\n(CRUD)", fillcolor="#e6f7e6"]; st [label="Module 2\nsession_tracker.py\n(logging)", fillcolor="#e6f7e6"];
+  sc [label="Module 3\nscheduler.py\n(SM-2 + heap planner)", fillcolor="#e6f7e6"]; an [label="Module 4\nanalytics.py\n(reports, CSV)", fillcolor="#e6f7e6"]; val [label="validators.py", fillcolor="#fff5d6"]; }
+ subgraph cluster_d { label="Data Layer"; style=dashed; db [label="database.py\n(sqlite3 wrapper)"]; sql [label="SQLite file\nstudysprint.db", shape=cylinder, fillcolor="#f3e6ff"]; }
+ subgraph cluster_c { label="Cross-cutting"; style=dashed; log [label="logger.py\n(rotating log)", fillcolor="#ffe6e6"]; cfg [label="config.py", fillcolor="#ffe6e6"]; }
+ main -> cli; cli -> sm; cli -> st; cli -> sc; cli -> an; st -> sc [label="apply_review"]; sm -> val; st -> val;
+ sm -> db; st -> db; sc -> db; an -> db; db -> sql; db -> log [style=dotted]; sm -> log [style=dotted]; db -> cfg [style=dotted]; }

@@ -1,0 +1,11 @@
+digraph G { rankdir=LR; node [shape=record, fontname="Helvetica", fontsize=10, style=filled, fillcolor="#f7f9ff"];
+ Database [label="{Database|+conn: Connection|+execute(sql, params)\l+query(sql, params)\l+close()\l}"];
+ SubjectManager [label="{SubjectManager|-db: Database|+add_subject(name)\l+rename_subject(id, name)\l+delete_subject(id)\l+add_topic(sid, title, diff)\l+update_difficulty(id, d)\l+list_topics(sid)\l}"];
+ SessionTracker [label="{SessionTracker|-db, -scheduler|+log_session(topic, min, q, notes)\l+list_sessions(topic, limit)\l}"];
+ ReviewScheduler [label="{ReviewScheduler|-db: Database|+apply_review(topic, q, today)\l+due_topics(today)\l+daily_plan(minutes, today)\l}"];
+ Analytics [label="{Analytics|-db: Database|+minutes_by_subject()\l+current_streak(today)\l+weakest_topics(n)\l+daily_minutes(days)\l+summary_text()\l+export_csv(path)\l}"];
+ Subject [label="{Subject|id, name, created_at}"]; Topic [label="{Topic|id, subject_id, title, difficulty,\lease_factor, interval_days,\lrepetitions, next_review\l}"]; StudySession [label="{StudySession|id, topic_id, minutes,\lquality, notes, studied_at\l}"];
+ PlanItem [label="{PlanItem|topic, minutes, overdue_days}"];
+ SubjectManager->Database [arrowhead=vee, style=dashed]; SessionTracker->Database [arrowhead=vee, style=dashed]; ReviewScheduler->Database [arrowhead=vee, style=dashed]; Analytics->Database [arrowhead=vee, style=dashed];
+ SessionTracker->ReviewScheduler [label="uses", arrowhead=vee]; SubjectManager->Subject [label="creates",arrowhead=vee]; SubjectManager->Topic [arrowhead=vee]; SessionTracker->StudySession [arrowhead=vee]; ReviewScheduler->PlanItem [arrowhead=vee]; PlanItem->Topic [arrowhead=diamond, label="1"];
+ Subject->Topic [arrowhead=none, taillabel="1", headlabel="*"]; Topic->StudySession [arrowhead=none, taillabel="1", headlabel="*"]; }

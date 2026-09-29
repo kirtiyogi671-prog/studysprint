@@ -1,0 +1,8 @@
+digraph G { rankdir=TB; node [fontname="Helvetica", fontsize=11]; 
+ s [shape=oval,label="Start",style=filled,fillcolor="#d5f5d5"]; e [shape=oval,label="End",style=filled,fillcolor="#f5d5d5"];
+ a [shape=box,label="Add subjects & topics\n(difficulty 1-5)"]; b [shape=box,label="View due topics / build\ndaily plan (time budget)"];
+ c [shape=box,label="Study the topic"]; d [shape=box,label="Log session:\nminutes + recall quality 0-5"];
+ v [shape=diamond,label="Input\nvalid?"]; err [shape=box,label="Show error,\nask again"];
+ u [shape=box,label="SM-2 updates ease, interval,\nnext review date"]; r [shape=box,label="View analytics report\n(streak, minutes, weak topics)"];
+ m [shape=diamond,label="Continue?"];
+ s->a->b->c->d->v; v->err [label="no"]; err->d; v->u [label="yes"]; u->r->m; m->b [label="yes"]; m->e [label="no"]; }

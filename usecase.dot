@@ -1,0 +1,6 @@
+digraph G { rankdir=LR; node [fontname="Helvetica", fontsize=11]; 
+ stu [shape=box, label="Student\n(Actor)", style=filled, fillcolor="#ffe9c6"];
+ subgraph cluster_s { label="StudySprint System"; style=rounded; node [shape=ellipse, style=filled, fillcolor="#eef3ff"];
+  u1 [label="Manage subjects"]; u2 [label="Manage topics"]; u3 [label="Log study session"]; u4 [label="View due reviews"]; u5 [label="Generate daily plan"]; u6 [label="View analytics report"]; u7 [label="Export CSV"]; u8 [label="Validate input"]; u9 [label="Update SM-2 schedule"]; }
+ stu->u1; stu->u2; stu->u3; stu->u4; stu->u5; stu->u6; stu->u7;
+ u3->u8 [style=dashed,label="«include»",fontsize=9]; u3->u9 [style=dashed,label="«include»",fontsize=9]; u1->u8 [style=dashed,label="«include»",fontsize=9]; u5->u4 [style=dashed,label="«include»",fontsize=9]; }
