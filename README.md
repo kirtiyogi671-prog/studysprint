@@ -30,8 +30,7 @@ The application itself uses only Python's standard library. `pytest` is optional
 ### Step 1: Clone the repository
 
 ```bash
-git clone https://github.com/kirtiyogi671/studysprint.git
-cd studysprint
+git clone kirtiyogi671-prop/studysprint.
 ```
 
 ### Step 2: Create a virtual environment (recommended)
@@ -118,7 +117,7 @@ The repository includes a script that creates sample data in a separate database
 **macOS/Linux:**
 
 ```bash
-STUDYSPRINT_DB=demo.db python scripts/seed_demo.py
+STUDYSPRINT_DB=demo.db python seed_demo.py
 STUDYSPRINT_DB=demo.db python main.py report
 ```
 
@@ -126,7 +125,7 @@ STUDYSPRINT_DB=demo.db python main.py report
 
 ```powershell
 $env:STUDYSPRINT_DB="demo.db"
-python scripts/seed_demo.py
+python seed_demo.py
 python main.py report
 ```
 
@@ -155,10 +154,10 @@ Run `python main.py -h` for the complete command-line help.
 Run the complete test suite from the repository root:
 
 ```bash
-python -m unittest discover -s tests -v
+python -m unittest discover  -v
 ```
 
-The project currently contains **26 tests**.
+The project includes an automated test suite covering the main modules.
 
 Optional:
 
@@ -200,25 +199,23 @@ studysprint/
 ```
 
 ## 9. Design and Documentation
+The repository includes architecture, workflow, use-case, sequence, class , and ER diagrams along with screenshots demonstrating the project.
 
-The `docs/img/` directory contains the architecture, workflow, use-case, sequence, class, and ER diagrams used by the project report. The structured project report is available at:
+The structured project report is available at:
 
-```text
-docs/StudySprint_Project_Report.pdf
-```
+'StudySprint_Project_Report.pdf'
 
-## 10. GitHub Submission
 
 The repository must be public for evaluation.
 
 Repository root URL:
 
 ```text
-https://github.com/kirtiyogi671/studysprint
+https://github.com/kirtiyogi671-prog/studysprint
 ```
 
 Submit the **repository root URL only**. Do not submit `/tree/main/`, `/blob/`, or another subdirectory URL.
 
 ## 11. License
 
-MIT License - see `LICENSE`.
+The project is submitted as academic course project for VITyarthi
