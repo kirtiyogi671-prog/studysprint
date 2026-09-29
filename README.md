@@ -29,8 +29,8 @@ The application uses Python's standard library. "pytest" is optional; the includ
 
 Step 1: Clone the repository
 
-git clone https://github.com/kirtiyogi671-prog/studysprint.git
-cd studysprint
+git clone 
+https://github.com/kirtiyogi671-prog/studysprint.git
 
 Step 2: Create a virtual environment (recommended)
 
